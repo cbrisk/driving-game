@@ -1,5 +1,7 @@
 var myCar = {
-  direction: 'east'
+  direction: 'east',
+  x: 0,
+  y: 0
 };
 
 var $car = document.querySelector('img');
@@ -13,6 +15,11 @@ document.addEventListener('keydown', function (event) {
     myCar.direction = 'west';
   } else if (event.key === 'ArrowRight') {
     myCar.direction = 'east';
+  } else if (event.key === ' ') {
+    setInterval(function () {
+      myCar.x += 4;
+      $car.style.left = myCar.x + 'px';
+    }, 16);
   }
   $car.className = myCar.direction;
 });
