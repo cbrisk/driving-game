@@ -5,7 +5,8 @@ body {
 
 img {
   width: 12%;
-  transition: transform .5s linear;
+  transition: transform 0.5s linear;
+  position: absolute;
 }
 
 .south {
