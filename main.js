@@ -1,17 +1,21 @@
 var myCar = {
-  direction: null
-}
+  direction: 'east'
+};
 
 var $car = document.querySelector('img');
 
 document.addEventListener('keydown', function (event) {
-  if (event.key === "ArrowDown") {
+  if (event.key === 'ArrowDown') {
     $car.className = 'south';
-  } else if (event.key === "ArrowUp") {
+    myCar.direction = 'south';
+  } else if (event.key === 'ArrowUp') {
     $car.className = 'north';
-  } else if (event.key === "ArrowLeft") {
+    myCar.direction = 'north';
+  } else if (event.key === 'ArrowLeft') {
     $car.className = 'west';
-  } else if (event.key === "ArrowRight") {
+    myCar.direction = 'west';
+  } else if (event.key === 'ArrowRight') {
     $car.className = 'east';
+    myCar.direction = 'east';
   }
 });
