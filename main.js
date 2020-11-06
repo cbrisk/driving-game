@@ -21,8 +21,19 @@ document.addEventListener('keydown', function (event) {
     myCar.driving = !myCar.driving;
     if (myCar.driving) {
       id = setInterval(function () {
-        myCar.x += 4;
-        $car.style.left = myCar.x + 'px';
+        if (myCar.direction === 'east') {
+          myCar.x += 4;
+          $car.style.left = myCar.x + 'px';
+        } else if (myCar.direction === 'west') {
+          myCar.x -= 4;
+          $car.style.left = myCar.x + 'px';
+        } else if (myCar.direction === 'south') {
+          myCar.y += 4;
+          $car.style.top = myCar.y + 'px';
+        } else if (myCar.direction === 'north') {
+          myCar.y -= 4;
+          $car.style.top = myCar.y + 'px';
+        }
       }, 16);
     } else {
       clearInterval(id);
